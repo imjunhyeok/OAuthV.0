@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+</form>
+<form method="GET" action="https://www.tistory.com/oauth/access_token">
+        <input type="hidden" name="client_id" value="47085c5d1ae0aa83237f87d689a1cd58"/>
+        <input type="hidden" name="client_secret" value="47085c5d1ae0aa83237f87d689a1cd587e36c094f817ba2b21df6bc151e4523557cb4c31"/>
+        <input type="hidden" name="redirect_uri" value="http://192.168.1.5:3000/oauth"/>
+        <input type="hidden" name="code" value="dcdf34473df2ca84bdb98ace25df4645d2d8e681227a2b8c45bcddf73425e335e5869137"/>
+        <input type="hidden" name="grant_type" value="authorization_code"/>
+            <button type="submit">Request Access Token</button>
+</form>
+<script src="/js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$.ajax({
+		url : '/wordList',
+		contentType : 'application/json; charset=utf-8',
+		type : 'GET',
+		dataType : 'json'
+	}).done(function(json, status, jqXHR) {
+		
+	});
+});
+</script>
+</body>
+</html>
