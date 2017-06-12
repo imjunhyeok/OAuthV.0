@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<p></p>
+<script src="/js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	var hash = "";
+	hash = $(location).attr('hash');
+	var startIndex, endIndex, token = "";
+	if(hash != ""){
+		startIndex = hash.indexOf("=");
+		endIndex = hash.indexOf("&");
+		token = hash.substring(startIndex+1, endIndex);
+	}
+	var param = {
+			access_token: token
+	};
+	$.ajax({
+		  url: 'http://192.168.1.5:3000/get_token',
+		  contentType : 'application/json; charset=utf-8',
+		  method: "GET",
+		  dataType: 'json',
+		  data: param
+		})
+		.done(function( json, status, jqXHR ) {
+			console.log('success');
+			console.log(json);
+			location.href = 'http://192.168.1.5:3000/get_token';
+		})
+		.fail(function(xhr, status, e){
+			console.log('fail');
+		});
+});
+</script>
+</body>
+</html>

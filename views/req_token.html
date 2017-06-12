@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form method="get" action="https://apis.daum.net/oauth2/authorize">
+        <input type="hidden" name="client_id" value="7008465132535302927"/>
+        <input type="hidden" name="redirect_uri" value="http://192.168.1.5:3000/oauth"/>
+        <input type="hidden" name="response_type" value="token"/>
+        <button type="submit">get access_token!</button>
+    <form>
+<!--  
+<form method="GET" action="https://www.tistory.com/oauth/authorize/">
+        <input type="hidden" name="client_id" value="47085c5d1ae0aa83237f87d689a1cd58"/>
+        <input type="hidden" name="redirect_uri" value="http://192.168.1.5:3000/oauth"/>
+        <input type="hidden" name="response_type" value="code"/>
+            <button type="submit">Request Athorization Code</button>
+</form>
+-->
+<script src="/js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$('button').trigger('click');
+	/*
+	var param = {
+			client_id: '47085c5d1ae0aa83237f87d689a1cd58',
+			redirect_uri: 'http://192.168.1.5:3000/oauth' ,
+			response_type: 'token'
+	};
+	$.ajax({
+	  url: 'https://www.tistory.com/oauth/authorize/',
+	  contentType : 'application/json; charset=utf-8',
+	  method: "GET",
+	  dataType: 'json',
+	  data: param
+	})
+	.done(function( json, status, jqXHR ) {
+		console.log('success')
+	})
+	.fail(function(xhr, status, e){
+		console.log('fail')
+	});
+	*/
+	
+});
+</script>
+</body>
+</html>
